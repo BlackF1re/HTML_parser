@@ -37,13 +37,8 @@ public class Program
         cardsList = noTabsDoc.Split('\n').ToList(); //построчная запись в лист
 
         #region data cleaning
-        string itemToRemove = "\n";
-        cardsList.RemoveAll(x => x == itemToRemove);
 
-        itemToRemove = "";
-        cardsList.RemoveAll(x => x == itemToRemove);
-
-        itemToRemove = "Уровень обучения";
+        string itemToRemove = "Уровень обучения";
         cardsList.RemoveAll(x => x == itemToRemove);
 
         itemToRemove = "Форма обучения";
@@ -79,6 +74,19 @@ public class Program
         itemToRemove = "Получить решение";
         cardsList.RemoveAll(x => x == itemToRemove);
 
+        itemToRemove = "Основная программа О программе";
+        cardsList.RemoveAll(x => x == itemToRemove);
+
+        //itemToRemove = "Основная программа О программе";
+        //cardsList.RemoveAll(x => x == itemToRemove);
+
+        //symbols
+        itemToRemove = "\n";
+        cardsList.RemoveAll(x => x == itemToRemove);
+
+        itemToRemove = "";
+        cardsList.RemoveAll(x => x == itemToRemove);
+
         itemToRemove = string.Empty;
         cardsList.RemoveAll(x => x == itemToRemove);
         #endregion
@@ -92,12 +100,12 @@ public class Program
         int Id = 0;
         string UniversityName;
         string ProgramName;
-        string ProgramName2;//what?
+        //string ProgramName2;//what?
         string Level;
         string ProgramCode;
         string StudyForm;
         string Duration;
-        string Qualification; //same as Level
+        //string Qualification; //same as Level
         string StudyLang;
         string Curator;
         string PhoneNumber;
@@ -105,47 +113,46 @@ public class Program
         string Cost;
 
         int id = 0;
-        int row1 = 0;
-        int row2 = 1;
-        int row3 = 2;
-        int row4 = 3;
-        int row5 = 4;
-        int row6 = 5;
-        int row7 = 6;
-        int row8 = 7;
-        int row9 = 8;
-        int row10 = 9;
-        int row11 = 10;
-        int row12 = 11;
-        int row13 = 12;
+
+        int row0 = 0;
+        int row1 = 1;
+        int row2 = 2;
+        int row3 = 3;
+        int row4 = 4;
+        int row5 = 5;
+        //int row6 = 6;
+        int row7 = 7;
+        int row8 = 8;
+        int row9 = 9;
+        int row10 = 10;
+        int row11 = 11;
 
         int cardCounter = 0;
-        int cardsTotalRows = cardsList.Count/13;
+        int cardsTotalRows = cardsList.Count/12;
 
         foreach (string line in cardsList)
         {
-            cards.Add(new Card(Id = id, UniversityName = cardsList[row1], ProgramName = cardsList[row2], ProgramName2 = cardsList[row3],
-                                Level = cardsList[row4], ProgramCode = cardsList[row5], StudyForm = cardsList[row6], Duration = cardsList[row7],
-                                Qualification = cardsList[row8], StudyLang = cardsList[row9], Curator = cardsList[row10], PhoneNumber = cardsList[row11], 
-                                Email = cardsList[row12], Cost = cardsList[row13]));
-            id ++;
+            cards.Add(new Card(Id = id, UniversityName = cardsList[row0], ProgramName = cardsList[row1], Level = cardsList[row2], 
+                                StudyForm = cardsList[row3], ProgramCode = cardsList[row4], Duration = cardsList[row5],
+                                StudyLang = cardsList[row7], Curator = cardsList[row8], PhoneNumber = cardsList[row9],
+                                Email = cardsList[row10], Cost = cardsList[row11]));
+            id++;
 
             //переход на строки для следующей карточки
-            row1 += 13;
-            row2 += 13;
-            row3 += 13;
-            row4 += 13;
-            row5 += 13;
-            row6 += 13;
-            row7 += 13;
-            row8 += 13;
-            row9 += 13;
-            row10 += 13;
-            row11 += 13;
-            row12 += 13;
-            row13 += 13;
+            row0 += 12;
+            row1 += 12;
+            row2 += 12;
+            row3 += 12;
+            row4 += 12;
+            row5 += 12;
+            //row6 += 12;
+            row7 += 12;
+            row8 += 12;
+            row9 += 12;
+            row10 += 12;
+            row11 += 12;
 
-            cardCounter ++;
+            cardCounter++;
             if (cardCounter == cardsTotalRows)
                 break;
         }

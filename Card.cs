@@ -8,42 +8,40 @@ namespace HTML_parser
 {
     public class Card
     {
-        public int Id;
         /*
-        Всего строк: 6501
-        Строк на одну карточку: 13
+        Всего строк: 6001
+        Строк на одну карточку: 12
         Карточек: 500
         */
-        public string UniversityName;
-        public string ProgramName;
-        public string ProgramName2;//what?
-        public string Level;
-        public string ProgramCode;
-        public string StudyForm;
-        public string Duration;
-        public string Qualification; //same as Level
-        public string StudyLang;
-        public string Curator;
-        public string PhoneNumber;
-        public string Email;
-        public string Cost;
 
-        public Card(int id, string universityName, string programName, string programName2, string level, string programCode, string studyForm, string duration, string qualification, string studyLang, string curator, string phoneNumber, string email, string cost)
+        private int Id;
+        private string UniversityName;
+        private string ProgramName;
+        private string Level;
+        private string ProgramCode;
+        private string StudyForm;
+        private string Duration;
+        private string StudyLang;
+        private string Curator;
+        private string PhoneNumber;
+        private string Email;
+        private string Cost;
+
+        public Card(int id, string universityName, string programName, string level, string studyForm, string programCode, string duration, string studyLang, string curator, string phoneNumber, string email, string cost)
         {
-            Id = id;
-            UniversityName = universityName;
-            ProgramName = programName;
-            ProgramName2 = programName2;
-            Level = level;
-            ProgramCode = programCode;
-            StudyForm = studyForm;
-            Duration = duration;
-            Qualification = qualification;
-            StudyLang = studyLang;
-            Curator = curator;
-            PhoneNumber = phoneNumber;
-            Email = email;
-            Cost = cost;
-        }
+            this.Id = id;
+            this.UniversityName = universityName;
+            this.ProgramName = programName;
+            this.Level = level;
+            this.StudyForm = studyForm;
+            this.ProgramCode = programCode;
+            this.Duration = duration;
+            this.StudyLang = studyLang;
+            this.Curator = curator;
+            this.PhoneNumber = phoneNumber;
+            this.Email = email;
+            this.Cost = cost;
+
+    }
     }
 }
